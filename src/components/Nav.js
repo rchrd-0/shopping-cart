@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-const Nav = () => {
+const Nav = (props) => {
+  const { cartSize } = props;
   return (
     <header id="page-header">
       <h1>
@@ -16,7 +17,7 @@ const Nav = () => {
             <Link to="/products">Products</Link>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">Cart ({cartSize})</Link>
           </li>
         </ul>
       </nav>

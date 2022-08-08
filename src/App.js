@@ -11,6 +11,7 @@ import getCatalog from './assets/productCatalog';
 const App = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+  const [cartSize, setCartSize] = useState(0);
 
   // Get product catalog, generate and assign item ids on mount
   useEffect(() => {
@@ -24,8 +25,20 @@ const App = () => {
     setProducts([...catalog]);
   }, []);
 
+  // Count total number of items in cart
+  useEffect(() => {
+    if (cart.length > 0) {
+      let count = 0;
+      for (let i = 0; i < cart.length; i++) {
+        count += cart[i].quantity;
+        setCartSize(count);
+      }
+    } else {
+      setCartSize(0);
+    }
+  }, [cart]);
+
   const addToCart = (id) => {
-    console.log(cart);
     const targetItem = products.filter((item) => item.id === id)[0];
     const alreadyInCart = cart.filter((item) => item.id === id).length > 0;
 
@@ -51,7 +64,7 @@ const App = () => {
   return (
     <div id="app">
       <Router>
-        <Nav />
+        <Nav cartSize={cartSize} />
         <Main products={products} addToCart={addToCart} />
       </Router>
       <Footer />

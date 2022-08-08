@@ -1,11 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
-import React, { useContext } from 'react';
+import React, { useEffect } from 'react';
 import Home from './views/Home';
 import Cart from './views/Cart';
 import Products from './views/Products';
 
 const Main = (props) => {
   const { products, addToCart } = props;
+
   return (
     <main id="content">
       <Routes>
