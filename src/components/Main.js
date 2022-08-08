@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import React from 'react';
 import CartItem from './elements/CartItem';
 import ProductItem from './elements/ProductItem';
@@ -7,9 +8,13 @@ import Products from './views/Products';
 
 const Main = () => {
   return (
-    <main id="page-content">
-      <div className="placeholder">placeholder</div>
-    </main>
+    <div id="page-content">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </div>
   );
 };
 
