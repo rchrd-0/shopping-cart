@@ -10,8 +10,9 @@ import getCatalog from './assets/productCatalog';
 
 const App = () => {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
 
-  // Get product catalog, generate ids on mount
+  // Get product catalog, generate and assign item ids on mount
   useEffect(() => {
     const catalog = getCatalog().map((item) => {
       return {
@@ -19,14 +20,39 @@ const App = () => {
         id: uniqid(),
       };
     });
+
     setProducts([...catalog]);
   }, []);
+
+  const addToCart = (id) => {
+    console.log(cart);
+    const targetItem = products.filter((item) => item.id === id)[0];
+    const alreadyInCart = cart.filter((item) => item.id === id).length > 0;
+
+    if (!alreadyInCart) {
+      const newCartItem = { ...targetItem, quantity: 1 };
+      setCart((prevState) => [...prevState, newCartItem]);
+    } else {
+      const updatedCart = cart.map((item) => {
+        if (item.id === id) {
+          return {
+            ...item,
+            quantity: item.quantity + 1,
+          };
+        }
+
+        return item;
+      });
+
+      setCart(updatedCart);
+    }
+  };
 
   return (
     <div id="app">
       <Router>
         <Nav />
-        <Main products={products} />
+        <Main products={products} addToCart={addToCart} />
       </Router>
       <Footer />
     </div>
