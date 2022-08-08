@@ -1,10 +1,17 @@
 import React from 'react';
+import ProductItem from '../elements/ProductItem';
 
-const Products = () => {
+const Products = (props) => {
   return (
-    <div id="products">
-      <h1 className="page-header">Products</h1>
-    </div>
+    <>
+      <h1 className="content-header">Products</h1>
+      <div id="products">
+        <div className="products-wrapper">
+          <ProductItem />
+          <ProductItem />
+        </div>
+      </div>
+    </>
   );
 };
 
