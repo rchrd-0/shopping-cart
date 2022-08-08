@@ -6,7 +6,11 @@ import Cart from './views/Cart';
 import Products from './views/Products';
 
 const Main = () => {
-  return <div />;
+  return (
+    <main id="page-content">
+      <div className="placeholder">placeholder</div>
+    </main>
+  );
 };
 
 export default Main;
