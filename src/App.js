@@ -67,10 +67,44 @@ const App = () => {
 
   const hideCart = () => setCartActive(false);
 
+  const incrementQuantity = (id) => {
+    const updatedCart = cart.map((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          quantity: item.quantity + 1,
+        };
+      }
+
+      return item;
+    });
+    setCart(updatedCart);
+  };
+
+  const decrementQuantity = (id) => {
+    const updatedCart = cart.map((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          quantity: item.quantity - 1,
+        };
+      }
+
+      return item;
+    });
+    setCart(updatedCart);
+  };
+
   return (
     <div id="app">
       {cartActive ? (
-        <Cart cart={cart} cartSize={cartSize} hideCart={hideCart} />
+        <Cart
+          cart={cart}
+          cartSize={cartSize}
+          hideCart={hideCart}
+          increment={incrementQuantity}
+          decrement={decrementQuantity}
+        />
       ) : null}
       <Router>
         <Nav cartSize={cartSize} showCart={showCart} />
