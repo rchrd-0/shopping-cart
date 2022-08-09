@@ -5,7 +5,7 @@ const ProductItem = (props) => {
   const { name, price, id } = product;
   return (
     <div className="product-card">
-      <div className="card-img" />
+      <div className="prod-img" />
       <div className="card-bottom">
         <div className="product-details">
           <p className="prod-name">{name}</p>

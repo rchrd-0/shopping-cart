@@ -116,7 +116,7 @@ nav > ul {
   border: 1px solid black;
 }
 
-.card-img {
+.prod-img {
   flex: 1;
   background-size: contain;
   background-repeat: no-repeat;
@@ -152,6 +152,43 @@ nav > ul {
 }
 
 #shopping-cart {
-  flex: 0 0 300px;
+  flex: 0 0 420px;
   background-color: paleturquoise;
+}
+
+.cart-card {
+  display: flex;
+  padding: 20px;
+}
+
+.cart-img {
+  width: 75px;
+  background-repeat: no-repeat;
+  background-color: seagreen;
+}
+
+.cart-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.cart-price {
+  min-width: 80px;
+}
+
+.input-quantity {
+  width: 5ch;
+  line-height: 1.4rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cart-card button {
+  padding: 6px 12px;
 }
