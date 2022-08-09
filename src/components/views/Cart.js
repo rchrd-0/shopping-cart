@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Cart = () => {
+const Cart = (props) => {
+  const { hideCart } = props;
   return (
-    <div id="shopping-cart">
-      <h1 className="content-header">Your cart</h1>
+    <div id="cart-wrapper">
+      <div id="cart-shadow" onClick={hideCart} />
+      <div id="shopping-cart">
+        <h1 className="content-header">Your cart</h1>
+      </div>
     </div>
   );
 };

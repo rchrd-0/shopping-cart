@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useContext, createContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import uniqid from 'uniqid';
 
 import Nav from './components/Nav';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import Cart from './components/views/Cart';
 import './assets/styles/style.css';
 import getCatalog from './assets/productCatalog';
 
@@ -12,6 +13,7 @@ const App = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [cartSize, setCartSize] = useState(0);
+  const [cartActive, setCartActive] = useState(false);
 
   // Get product catalog, generate and assign item ids on mount
   useEffect(() => {
@@ -61,13 +63,26 @@ const App = () => {
     }
   };
 
+  const showCart = () => setCartActive(true);
+
+  const hideCart = () => setCartActive(false);
+
   return (
     <div id="app">
+      {cartActive ? (
+        <Cart cart={cart} cartSize={cartSize} hideCart={hideCart} />
+      ) : null}
       <Router>
-        <Nav cartSize={cartSize} />
-        <Main products={products} addToCart={addToCart} />
+        <Nav cartSize={cartSize} showCart={showCart} />
+        <Main
+          products={products}
+          addToCart={addToCart}
+          cart={cart}
+          cartSize={cartSize}
+          hideCart={hideCart}
+        />
       </Router>
-      <Footer />
+      <Footer hideCart={hideCart} />
     </div>
   );
 };

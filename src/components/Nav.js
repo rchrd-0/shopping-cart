@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 
 const Nav = (props) => {
-  const { cartSize } = props;
+  const { cartSize, showCart } = props;
   return (
     <header id="page-header">
       <h1>
@@ -16,8 +16,9 @@ const Nav = (props) => {
           <li>
             <Link to="/products">Products</Link>
           </li>
-          <li>
-            <Link to="/cart">Cart ({cartSize})</Link>
+          <li onClick={showCart}>
+            {/* <Link to="/cart">Cart ({cartSize})</Link> */}
+            Cart ({cartSize})
           </li>
         </ul>
       </nav>

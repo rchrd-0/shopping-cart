@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Home from './views/Home';
-import Cart from './views/Cart';
 import Products from './views/Products';
 
 const Main = (props) => {
@@ -15,7 +14,6 @@ const Main = (props) => {
           path="/products"
           element={<Products catalog={products} addToCart={addToCart} />}
         />
-        <Route path="/cart" element={<Cart />} />
       </Routes>
     </main>
   );
