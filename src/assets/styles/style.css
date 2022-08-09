@@ -173,12 +173,9 @@ nav > ul {
   flex-direction: column;
 }
 
-.cart-top {
-  display: flex;
-  justify-content: space-between;
-}
-
-.cart-bottom {
+.cart-top,
+.cart-bottom,
+.order-row {
   display: flex;
   justify-content: space-between;
   align-items: center;

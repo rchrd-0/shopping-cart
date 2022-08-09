@@ -1,8 +1,12 @@
 import React from 'react';
 import CartItem from '../elements/CartItem';
+import calcSubTotal from '../../helpers/calcOrder';
+import OrderTotal from '../elements/OrderTotal';
 
 const Cart = (props) => {
   const { cart, hideCart, increment, decrement, remove } = props;
+  const subTotal = calcSubTotal(cart);
+  const delivery = 25;
   return (
     <div id="cart-wrapper">
       <div id="cart-shadow" onClick={hideCart} />
@@ -19,6 +23,9 @@ const Cart = (props) => {
             />
           ))}
         </div>
+        {cart.length > 0 ? (
+          <OrderTotal subTotal={subTotal} delivery={delivery} />
+        ) : null}
       </div>
     </div>
   );
