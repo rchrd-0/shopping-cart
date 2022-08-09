@@ -110,17 +110,17 @@ const App = () => {
 
   return (
     <div id="app">
-      {cartActive ? (
-        <Cart
-          cart={cart}
-          cartSize={cartSize}
-          hideCart={hideCart}
-          increment={incrementQuantity}
-          decrement={decrementQuantity}
-          remove={removeItem}
-        />
-      ) : null}
       <Router>
+        {cartActive ? (
+          <Cart
+            cart={cart}
+            cartSize={cartSize}
+            hideCart={hideCart}
+            increment={incrementQuantity}
+            decrement={decrementQuantity}
+            remove={removeItem}
+          />
+        ) : null}
         <Nav cartSize={cartSize} showCart={showCart} />
         <Main
           products={products}
