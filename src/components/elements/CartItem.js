@@ -16,7 +16,12 @@ const CartItem = (props) => {
           >
             +
           </button>
-          <input type="number" className="input-quantity" value={quantity} />
+          <input
+            type="number"
+            className="input-quantity"
+            min={0}
+            value={quantity}
+          />
           <button
             type="button"
             className="quantity-btn"
@@ -29,7 +34,7 @@ const CartItem = (props) => {
           Remove
         </button>
       </div>
-      <div className="cart-price">{price * quantity}</div>
+      <div className="cart-price">{(price * quantity).toFixed(2)}</div>
     </div>
   );
 };

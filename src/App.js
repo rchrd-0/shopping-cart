@@ -82,17 +82,22 @@ const App = () => {
   };
 
   const decrementQuantity = (id) => {
-    const updatedCart = cart.map((item) => {
+    const updatedQuantities = cart.map((item) => {
       if (item.id === id) {
+        if (item.quantity === 0) {
+          return item;
+        }
         return {
           ...item,
           quantity: item.quantity - 1,
         };
       }
-
       return item;
     });
-    setCart(updatedCart);
+
+    const filteredCart = updatedQuantities.filter((item) => item.quantity > 0);
+
+    setCart(filteredCart);
   };
 
   return (
