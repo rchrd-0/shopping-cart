@@ -2,7 +2,7 @@ import React from 'react';
 import CartItem from '../elements/CartItem';
 
 const Cart = (props) => {
-  const { cart, hideCart, increment, decrement } = props;
+  const { cart, hideCart, increment, decrement, remove } = props;
   return (
     <div id="cart-wrapper">
       <div id="cart-shadow" onClick={hideCart} />
@@ -15,6 +15,7 @@ const Cart = (props) => {
               item={item}
               increment={increment}
               decrement={decrement}
+              remove={remove}
             />
           ))}
         </div>

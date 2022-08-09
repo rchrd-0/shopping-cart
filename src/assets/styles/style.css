@@ -167,26 +167,21 @@ nav > ul {
   background-color: seagreen;
 }
 
-.cart-details {
+.cart-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+.cart-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-bottom {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  flex: 1;
-}
-
-.cart-price {
-  min-width: 80px;
-}
-
-.input-quantity {
-  width: 5ch;
-  line-height: 1.4rem;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 .cart-card button {

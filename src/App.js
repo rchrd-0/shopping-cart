@@ -87,15 +87,23 @@ const App = () => {
         if (item.quantity === 0) {
           return item;
         }
+
         return {
           ...item,
           quantity: item.quantity - 1,
         };
       }
+
       return item;
     });
 
     const filteredCart = updatedQuantities.filter((item) => item.quantity > 0);
+
+    setCart(filteredCart);
+  };
+
+  const removeItem = (id) => {
+    const filteredCart = cart.filter((item) => item.id !== id);
 
     setCart(filteredCart);
   };
@@ -109,6 +117,7 @@ const App = () => {
           hideCart={hideCart}
           increment={incrementQuantity}
           decrement={decrementQuantity}
+          remove={removeItem}
         />
       ) : null}
       <Router>

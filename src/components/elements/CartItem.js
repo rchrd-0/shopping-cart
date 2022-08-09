@@ -1,40 +1,42 @@
 import React from 'react';
 
 const CartItem = (props) => {
-  const { item, increment, decrement } = props;
+  const { item, increment, decrement, remove } = props;
   const { id, name, quantity, price } = item;
   return (
     <div className="cart-card">
       <div className="cart-img" />
-      <div className="cart-details">
-        <p className="cart-name">{name}</p>
-        <div className="cart-quant">
+      <div className="cart-content">
+        <div className="cart-top">
+          <h2>{name}</h2>
           <button
             type="button"
-            className="quantity-btn"
-            onClick={() => increment(id)}
+            className="remove-btn"
+            onClick={() => remove(id)}
           >
-            +
+            X
           </button>
-          <input
-            type="number"
-            className="input-quantity"
-            min={0}
-            value={quantity}
-          />
+        </div>
+        <div className="cart-bottom">
+          <h3>QTY</h3>
           <button
             type="button"
             className="quantity-btn"
             onClick={() => decrement(id)}
           >
-            -
+            &#x2212;
           </button>
+          <p>{quantity}</p>
+          <button
+            type="button"
+            className="quantity-btn"
+            onClick={() => increment(id)}
+          >
+            &#x2b;
+          </button>
+          <p>HK${(price * quantity).toFixed(2)}</p>
         </div>
-        <button type="button" className="remove-btn">
-          Remove
-        </button>
       </div>
-      <div className="cart-price">{(price * quantity).toFixed(2)}</div>
     </div>
   );
 };
