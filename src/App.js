@@ -10,7 +10,7 @@ import getCatalog from './assets/productCatalog';
 
 import GlobalStyle from './assets/styles/GlobalStyle';
 import Theme from './assets/styles/Theme';
-import './assets/styles/font.css';
+import './assets/styles/fonts.css';
 import './assets/styles/reset.css';
 
 const App = () => {

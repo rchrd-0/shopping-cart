@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import CartItem from '../elements/CartItem';
 import Button from '../elements/Button';
+import ButtonPrimary from '../elements/ButtonPrimary';
 import calcSubTotal from '../../helpers/calcOrder';
 import OrderTotal from '../elements/OrderTotal';
 import importAll from '../../helpers/importAll';
@@ -43,14 +44,14 @@ const Cart = (props) => {
               />
             ))}
             <OrderTotal subTotal={subTotal} delivery={delivery} />
-            <Checkout type="button">Checkout</Checkout>
+            <ButtonPrimary type="button">Checkout</ButtonPrimary>
           </>
         ) : (
           <>
             <Logo img={greyLogo} />
-            <Button onClick={hideCart}>
-              <Link to="/shop">View shop</Link>
-            </Button>
+            <Link to="/shop" onClick={hideCart}>
+              <Button>View shop</Button>
+            </Link>
           </>
         )}
       </ShoppingCart>
@@ -107,17 +108,6 @@ const Logo = styled.div`
   background-position: center;
   background-size: 120px;
   background-image: url('${(props) => props.img}');
-`;
-
-const Checkout = styled(Button)`
-  background-color: ${(props) => props.theme.colour.primary};
-  border: 1px solid ${(props) => props.theme.colour.primary};
-  color: ${(props) => props.theme.colour.almostBlack};
-
-  &:hover {
-    background-color: ${(props) => props.theme.colour.secondary};
-    border-color: ${(props) => props.theme.colour.secondary};
-  }
 `;
 
 export default Cart;
