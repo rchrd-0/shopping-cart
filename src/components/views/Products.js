@@ -23,7 +23,7 @@ const Products = (props) => {
 };
 
 const ProductsLayout = styled.div`
-  padding: 60px 40px;
+  padding: 60px 40px 80px;
   flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, 400px);

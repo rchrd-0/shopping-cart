@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import React from 'react';
 import Home from './views/Home';
 import Products from './views/Products';
+import Footer from './Footer';
 
 const Main = (props) => {
   const { products, addToCart } = props;
@@ -16,6 +17,7 @@ const Main = (props) => {
           element={<Products catalog={products} addToCart={addToCart} />}
         />
       </Routes>
+      <Footer />
     </ContentLayout>
   );
 };

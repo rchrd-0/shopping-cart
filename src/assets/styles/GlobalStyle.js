@@ -14,7 +14,7 @@ body {
 a,
 a:visited {
   text-decoration: none;
-  color: inherit;
+  color: inherit; 
   user-select: none;
 }
 

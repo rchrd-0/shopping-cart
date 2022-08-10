@@ -5,7 +5,6 @@ import uniqid from 'uniqid';
 
 import Nav from './components/Nav';
 import Main from './components/Main';
-import Footer from './components/Footer';
 import Cart from './components/views/Cart';
 import getCatalog from './assets/productCatalog';
 
@@ -13,7 +12,6 @@ import GlobalStyle from './assets/styles/GlobalStyle';
 import Theme from './assets/styles/Theme';
 import './assets/styles/font.css';
 import './assets/styles/reset.css';
-import './assets/styles/style.css';
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -139,7 +137,6 @@ const App = () => {
               hideCart={hideCart}
             />
           </Router>
-          <Footer hideCart={hideCart} />
         </AppLayout>
       </Theme>
     </>
