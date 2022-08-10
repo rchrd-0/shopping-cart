@@ -28,9 +28,9 @@ const Nav = (props) => {
           <ListItem>
             <NavLink
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
-              to="/products"
+              to="/shop"
             >
-              Products
+              Shop
             </NavLink>
           </ListItem>
           <CartWrapper>
@@ -61,6 +61,7 @@ const Home = styled.h1`
   color: ${(props) => props.theme.colour.primary};
   font-weight: 300;
   text-transform: lowercase;
+  margin-right: 20px;
 `;
 
 const LinksTo = styled.ul`
