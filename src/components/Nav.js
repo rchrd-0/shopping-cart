@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import cart from '../assets/icons/cart.svg';
 import cartActive from '../assets/icons/cart-active.svg';
+import logo from '../assets/icons/feather.svg';
 
 const Nav = (props) => {
   const { cartSize, showCart } = props;
@@ -12,9 +13,9 @@ const Nav = (props) => {
   };
   return (
     <Header>
-      <Home>
-        <Link to="/">Keramikos</Link>
-      </Home>
+      <Link to="/">
+        <Home img={logo}>Keramikos</Home>
+      </Link>
       <nav>
         <LinksTo>
           <ListItem>
@@ -56,7 +57,12 @@ const Header = styled.header`
   height: 60px;
 `;
 
-const Home = styled.h1`
+const Home = styled.div`
+  background-image: url('${(props) => props.img}');
+  background-repeat: no-repeat;
+  background-size: 36px;
+  background-position: 0 center;
+  padding-left: 42px;
   font-size: 2.4rem;
   color: ${(props) => props.theme.colour.primary};
   font-weight: 300;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from './Button';
 
 const ProductItem = (props) => {
   const { product, addToCart, imgSrc } = props;
@@ -12,7 +13,9 @@ const ProductItem = (props) => {
           <ProductName>{name}</ProductName>
           <ProductPrice>HK${price}</ProductPrice>
         </ProductDetails>
-        <AddBtn onClick={() => addToCart(id)}>Add to cart</AddBtn>
+        <Button type="button" onClick={() => addToCart(id)}>
+          Add to cart
+        </Button>
       </CardBottom>
     </Card>
   );
@@ -53,27 +56,7 @@ const ProductName = styled.h2`
 `;
 
 const ProductPrice = styled.p`
-  font-family: ${(props) => props.theme.font.text};
   font-size: 1.2rem;
-`;
-
-const AddBtn = styled.button`
-  align-self: center;
-  background-color: ${(props) => props.theme.colour.darkGrey};
-  color: ${(props) => props.theme.colour.light};
-  transition: all 0.1s ease-in-out;
-  border: 1px solid ${(props) => props.theme.colour.darkGrey};
-
-  &:hover {
-    background-color: ${(props) => props.theme.colour.lightGrey};
-    color: ${(props) => props.theme.colour.almostBlack};
-    transition: all 0.1s ease-in-out;
-  }
-
-  &:active {
-    filter: brightness(0.7);
-    transition: all 0.1s ease-in-out;
-  }
 `;
 
 export default ProductItem;

@@ -147,11 +147,10 @@ const App = () => {
 };
 
 const AppLayout = styled.div`
+  position: relative;
   display: flex;
   width: 100vw;
-  height: 100vh;
-  flex: 1;
-  display: flex;
+  height: 100%;
   flex-direction: column;
   justify-content: space-between;
 `;

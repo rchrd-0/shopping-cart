@@ -1,6 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+html {
+  min-height: 100%;
+  display: flex;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+}
+
 a,
 a:visited {
   text-decoration: none;
