@@ -117,7 +117,7 @@ const App = () => {
       <GlobalStyle />
       <Theme>
         <AppLayout>
-          <Router>
+          <Router basename="/shopping-cart">
             {cartActive ? (
               <Cart
                 cart={cart}
