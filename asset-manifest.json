@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.04173948.css",
+    "main.js": "/shopping-cart/static/js/main.15e8058b.js",
+    "static/media/landing.jpg": "/shopping-cart/static/media/landing.f31cf5ac6391efd4a85e.jpg",
+    "static/media/prod001.jpg": "/shopping-cart/static/media/prod001.7aceb488c329bc350e72.jpg",
+    "static/media/prod004.jpg": "/shopping-cart/static/media/prod004.48b3439f3035a2146706.jpg",
+    "static/media/prod002.jpg": "/shopping-cart/static/media/prod002.18ae62976461baf4c7f3.jpg",
+    "static/media/prod009.jpg": "/shopping-cart/static/media/prod009.4899d5db042766463b4a.jpg",
+    "static/media/prod007.jpg": "/shopping-cart/static/media/prod007.0cafb3b9d6a309684468.jpg",
+    "static/media/prod005.jpg": "/shopping-cart/static/media/prod005.1f76bbbdb9f934d220f8.jpg",
+    "static/media/prod003.jpg": "/shopping-cart/static/media/prod003.f026958aba56cea3277f.jpg",
+    "static/media/prod006.jpg": "/shopping-cart/static/media/prod006.951be7fe2ca12d7b90c4.jpg",
+    "static/media/prod008.jpg": "/shopping-cart/static/media/prod008.7cef6ad88f0a0a593f30.jpg",
+    "index.html": "/shopping-cart/index.html",
+    "static/media/github.svg": "/shopping-cart/static/media/github.1fd94a391b332f15bfa1e2b0ce062442.svg",
+    "static/media/trash.svg": "/shopping-cart/static/media/trash.43a9b415106daf4c62a10ba7ee158a83.svg",
+    "static/media/cart-active.svg": "/shopping-cart/static/media/cart-active.d04f82ba93c0c1aa650ee0c7305eede1.svg",
+    "static/media/cart.svg": "/shopping-cart/static/media/cart.b4f770785c4a7b8f330ba6d2eaf00b7c.svg",
+    "static/media/feather-light-grey.svg": "/shopping-cart/static/media/feather-light-grey.ed0eb841c7ddb8efab7889eca7d2d7b0.svg",
+    "static/media/feather.svg": "/shopping-cart/static/media/feather.f2458aef4d083caff6086a00be3737b7.svg",
+    "main.04173948.css.map": "/shopping-cart/static/css/main.04173948.css.map",
+    "main.15e8058b.js.map": "/shopping-cart/static/js/main.15e8058b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.04173948.css",
+    "static/js/main.15e8058b.js"
+  ]
+}
