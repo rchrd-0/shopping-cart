@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import styled from 'styled-components';
 import uniqid from 'uniqid';
 
 import Nav from './components/Nav';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import Cart from './components/views/Cart';
-import './assets/styles/style.css';
 import getCatalog from './assets/productCatalog';
+
+import GlobalStyle from './assets/styles/GlobalStyle';
+import Theme from './assets/styles/Theme';
+import './assets/styles/font.css';
+import './assets/styles/reset.css';
+import './assets/styles/style.css';
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -109,30 +115,45 @@ const App = () => {
   };
 
   return (
-    <div id="app">
-      <Router>
-        {cartActive ? (
-          <Cart
-            cart={cart}
-            cartSize={cartSize}
-            hideCart={hideCart}
-            increment={incrementQuantity}
-            decrement={decrementQuantity}
-            remove={removeItem}
-          />
-        ) : null}
-        <Nav cartSize={cartSize} showCart={showCart} />
-        <Main
-          products={products}
-          addToCart={addToCart}
-          cart={cart}
-          cartSize={cartSize}
-          hideCart={hideCart}
-        />
-      </Router>
-      <Footer hideCart={hideCart} />
-    </div>
+    <>
+      <GlobalStyle />
+      <Theme>
+        <AppLayout>
+          <Router>
+            {cartActive ? (
+              <Cart
+                cart={cart}
+                cartSize={cartSize}
+                hideCart={hideCart}
+                increment={incrementQuantity}
+                decrement={decrementQuantity}
+                remove={removeItem}
+              />
+            ) : null}
+            <Nav cartSize={cartSize} showCart={showCart} />
+            <Main
+              products={products}
+              addToCart={addToCart}
+              cart={cart}
+              cartSize={cartSize}
+              hideCart={hideCart}
+            />
+          </Router>
+          <Footer hideCart={hideCart} />
+        </AppLayout>
+      </Theme>
+    </>
   );
 };
+
+const AppLayout = styled.div`
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 
 export default App;

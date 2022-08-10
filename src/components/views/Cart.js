@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom';
 import CartItem from '../elements/CartItem';
 import calcSubTotal from '../../helpers/calcOrder';
 import OrderTotal from '../elements/OrderTotal';
+import importAll from '../../helpers/importAll';
 
 const Cart = (props) => {
   const { cart, cartSize, hideCart, increment, decrement, remove } = props;
   const subTotal = calcSubTotal(cart);
   const delivery = 25;
+  const images = importAll(
+    require.context('../../assets/images', false, /\.(png|jpe?g|svg)$/)
+  );
   return (
     <div id="cart-wrapper">
       <div id="cart-shadow" onClick={hideCart} />
@@ -26,6 +30,7 @@ const Cart = (props) => {
               increment={increment}
               decrement={decrement}
               remove={remove}
+              imgSrc={images[item.img]}
             />
           ))}
         </div>

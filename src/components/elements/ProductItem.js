@@ -1,16 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import importAll from '../../helpers/importAll';
 
 const ProductItem = (props) => {
-  const { product, addToCart } = props;
-  const { name, price, id, img } = product;
-  const images = importAll(
-    require.context('../../assets/images', false, /\.(png|jpe?g|svg)$/)
-  );
+  const { product, addToCart, imgSrc } = props;
+  const { name, price, id } = product;
   return (
     <Card>
-      <ProductImage img={images[img]} />
+      <ProductImage img={imgSrc} />
       <div className="card-bottom">
         <div className="product-details">
           <p className="prod-name">{name}</p>
@@ -30,6 +26,7 @@ const Card = styled.div`
   justify-content: space-between;
   border: 1px solid black;
 `;
+
 const ProductImage = styled.div`
   height: 300px;
   background-image: url('${(props) => props.img}');
