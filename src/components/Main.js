@@ -33,6 +33,7 @@ const ContentLayout = styled.main`
   > div {
     width: 100%;
   }
+  user-select: none;
 `;
 
 export default Main;

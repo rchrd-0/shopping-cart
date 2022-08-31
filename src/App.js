@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
+
 import uniqid from 'uniqid';
 
-import Nav from './components/Nav';
+import Nav from './components/Nav/Nav';
 import Main from './components/Main';
-import Cart from './components/views/Cart';
+import Cart from './components/views/Cart/Cart';
 import getCatalog from './assets/productCatalog';
 
 import GlobalStyle from './assets/styles/GlobalStyle';
@@ -118,16 +119,15 @@ const App = () => {
       <Theme>
         <AppLayout>
           <Router basename="/shopping-cart">
-            {cartActive ? (
-              <Cart
-                cart={cart}
-                cartSize={cartSize}
-                hideCart={hideCart}
-                increment={incrementQuantity}
-                decrement={decrementQuantity}
-                remove={removeItem}
-              />
-            ) : null}
+            <Cart
+              cart={cart}
+              cartSize={cartSize}
+              cartActive={cartActive}
+              hideCart={hideCart}
+              increment={incrementQuantity}
+              decrement={decrementQuantity}
+              remove={removeItem}
+            />
             <Nav cartSize={cartSize} showCart={showCart} />
             <Main
               products={products}
