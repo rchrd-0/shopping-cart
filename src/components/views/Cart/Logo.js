@@ -6,16 +6,25 @@ const pathVariants = {
   initial: {
     opacity: 1,
     pathLength: 1,
+    stroke: '#BABDBF',
   },
 
   end: {
     opacity: 0,
     pathLength: 0,
+    stroke: '#f2c4bf',
     transition: {
-      duration: 1.5,
+      duration: 2,
       ease: 'easeInOut',
       repeat: Infinity,
       repeatType: 'reverse',
+
+      stroke: {
+        repeat: Infinity,
+        repeatType: 'mirror',
+        duration: 4,
+        ease: 'easeInOut',
+      },
     },
   },
 };
