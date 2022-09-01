@@ -53,7 +53,7 @@ const variants = {
       y: [0, -15, 0, -15, 0],
       transition: {
         y: {
-          delay: 1,
+          delay: 3.5,
           type: 'spring',
           duration: 0.8,
           ease: 'backIn',
