@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   align-self: center;
   background-color: ${(props) => props.theme.colour.darkGrey};
   color: ${(props) => props.theme.colour.light};

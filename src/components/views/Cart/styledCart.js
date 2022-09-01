@@ -9,7 +9,7 @@ export const Backdrop = styled(motion.div)`
   display: flex;
   justify-content: flex-end;
   background-color: rgb(0, 0, 0, 0.5);
-  z-index: 1;
+  z-index: 2;
 `;
 
 export const EventWrapper = styled.div`

@@ -13,6 +13,8 @@ export const Header = styled.header`
   font-family: ${(props) => props.theme.font.display};
   padding: 0 80px 0 60px;
   height: 60px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  z-index: 1;
 `;
 
 export const Home = styled(motion.div)`

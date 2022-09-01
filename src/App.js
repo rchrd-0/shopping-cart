@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import uniqid from 'uniqid';
 
+import { AnimatePresence } from 'framer-motion';
 import Nav from './components/Nav/Nav';
 import Main from './components/Main';
 import Cart from './components/views/Cart/Cart';
@@ -118,25 +119,27 @@ const App = () => {
       <GlobalStyle />
       <Theme>
         <AppLayout>
-          <Router basename="/shopping-cart">
-            <Cart
-              cart={cart}
-              cartSize={cartSize}
-              cartActive={cartActive}
-              hideCart={hideCart}
-              increment={incrementQuantity}
-              decrement={decrementQuantity}
-              remove={removeItem}
-            />
-            <Nav cartSize={cartSize} showCart={showCart} />
-            <Main
-              products={products}
-              addToCart={addToCart}
-              cart={cart}
-              cartSize={cartSize}
-              hideCart={hideCart}
-            />
-          </Router>
+          <AnimatePresence>
+            <Router basename="/shopping-cart">
+              <Cart
+                cart={cart}
+                cartSize={cartSize}
+                cartActive={cartActive}
+                hideCart={hideCart}
+                increment={incrementQuantity}
+                decrement={decrementQuantity}
+                remove={removeItem}
+              />
+              <Nav cartSize={cartSize} showCart={showCart} />
+              <Main
+                products={products}
+                addToCart={addToCart}
+                cart={cart}
+                cartSize={cartSize}
+                hideCart={hideCart}
+              />
+            </Router>
+          </AnimatePresence>
         </AppLayout>
       </Theme>
     </>
