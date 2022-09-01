@@ -6,6 +6,7 @@ A JavaScript (React) project from The Odin Project's [curriculum](https://www.th
 Tools: 
 * [React Router](https://reactrouter.com/)
 * [Styled Components](https://styled-components.com/)
+* [Framer Motion](https://www.framer.com/motion/)
 * [Single Page Apps for GH Pages](https://github.com/rafgraph/spa-github-pages)
 
 Sources:
