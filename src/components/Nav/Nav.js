@@ -2,7 +2,6 @@ import { NavLink, Link } from 'react-router-dom';
 import React from 'react';
 import {
   Header,
-  Home,
   LinksTo,
   ListItem,
   CartWrapper,
@@ -29,13 +28,7 @@ const Nav = (props) => {
   return (
     <Header>
       <Link to="/">
-        <Home
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: 'spring', stiffness: 500 }}
-        >
-          <Logo pathVariants={variants.logo} />
-          Keramikos
-        </Home>
+        <Logo />
       </Link>
       <nav>
         <LinksTo>

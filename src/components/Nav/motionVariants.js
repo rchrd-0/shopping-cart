@@ -9,6 +9,16 @@ const variants = {
     },
   },
 
+  home: {
+    whileHover: {
+      scale: 1.05,
+      transition: {
+        type: 'spring',
+        stiffness: '500',
+      },
+    },
+  },
+
   logo: {
     initial: {
       opacity: 0,
@@ -21,6 +31,17 @@ const variants = {
       transition: {
         duration: 1.5,
         ease: 'easeInOut',
+      },
+    },
+
+    whileHover: {
+      opacity: [1, 0, 1],
+      pathLength: [1, 0, 1],
+      transition: {
+        duration: 4,
+        ease: 'easeInOut',
+        repeat: Infinity,
+        repeatType: 'reverse',
       },
     },
   },
