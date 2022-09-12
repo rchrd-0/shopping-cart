@@ -1,7 +1,8 @@
-# cv-app
+# shopping-cart
 ![Site preview](./site-preview.png)
 A JavaScript (React) project from The Odin Project's [curriculum](https://www.theodinproject.com/lessons/node-path-javascript-shopping-cart). Main focus:
 * React hooks and lifecycle methods; fundamentals (components, states, props, create-react-app)
+* Framer Motion used for smoother page transitions and logo animations to give the whole page a bit of life
 
 Tools: 
 * [React Router](https://reactrouter.com/)
